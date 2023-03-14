@@ -1,0 +1,24 @@
+<style>
+        #test{
+            font-style: italic;
+            color:chartreuse
+        }
+        p{
+            color: green;
+        }
+        .super__vip{
+            color: orangered;
+        }         
+        .vip{
+            color: violet;
+        }
+
+        ul. a li{
+            color:rgb(255, 0, 132)
+        }
+
+        ul.b li{
+            color:rgb(255, 191, 0)
+        }
+
+    </style>
