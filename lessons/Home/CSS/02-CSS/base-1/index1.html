@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отображение игральных карт на основе спрайта</title>
+    <style>
+      /* определяем классы для каждой карты */
+      .card {
+        width: 136px;
+        height: 192px;
+        padding: 2px;
+        background-image: url(http://142.93.172.35:8080/static/media/cards.7e0a18f0.png);
+      }
+      .jack-hearts {
+        background-position: -430px -1588px;
+      }
+      .queen-spades {
+        background-position: 0px -1786px;
+      }
+      .nine-diamonds {
+        background-position: -288px -1388px;
+      }
+      .ace-clubs {
+        background-position: -716px -2184px;
+      }
+      .joker-red {
+        background-position: -290px -2382px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td><div class="card jack-hearts"></div></td>
+        <td><div class="card queen-spades"></div></td>
+        <td><div class="card nine-diamonds"></div></td>
+        <td><div class="card ace-clubs"></div></td>     
+        <td><div class="card joker-red"></div></td>   
+      </tr>
+    </table>
+  </body>
+</html>
+
