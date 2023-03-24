@@ -1,0 +1,55 @@
+﻿var Str="";
+
+
+Str+="<div class='SExampleHeader'>";
+Str+="Обычно, таблица не может быть выровнена внутри её контейнера стилевым свойством контейнера text-align, даже если таблице явно задана ширина, меньшая ширины контейнера.<br>";
+Str+="</div>";
+
+var Example=
+  "<div style='border: solid red 1px; text-align: center'>$$$"+
+  "  <table  border=1$$$      style='border-collapse: collapse; width: 150px'>$$$"+
+  "    <tr><th></th><th>Netscape</th></tr>$$$"+
+  "    <tr><th>возраст</th><td>старый</td></tr>$$$"+
+  "    <tr><th>версия</th><td>9.0</td></tr>$$$"+
+  "  </table>$$$"+
+  "</div>";
+Str+=ComposeExamples([{code:Example}],{leftcolperc:65,leftfontsize:13,autoquoteattrs:true});
+
+Str+="<div class='SExampleHeader'>";
+Str+="Таблицу, более узкую чем её контейнер, можно выровнять внутри её контейнера по&nbsp;горизонтали несколькими способами:";
+Str+="<ul>";
+Str+="<li>установкой таблице стилевых свойств <b>margin-left</b> и <b>margin-right</b> в значение <b>auto</b> (центрирование);";
+Str+="<li>установкой таблице стилевого свойства <b>display</b> в значение <b>inline-table</b>, при этом на неё начинает действовать стилевое свойство контейнера <b>text-align</b>;";
+Str+="<li>установкой таблице HTML-атрибута <b>align</b> равным значению <b>center</b> или <b>right</b> (соответственно центрирование и выравнивание к правому краю).";
+Str+="</ul>";
+Str+="</div>";
+
+var Example2=
+  "<div style='border: solid red 1px'>$$$"+
+  "  <table border=1$$$      style='border-collapse: collapse; margin: 0 auto 0 auto'>$$$"+
+  "    <tr><th></th><th>Netscape</th></tr>$$$"+
+  "    <tr><th>возраст</th><td>старый</td></tr>$$$"+
+  "    <tr><th>версия</th><td>9.0</td></tr>$$$"+
+  "  </table>$$$"+
+  "</div>";
+var Example3=
+  "<div style='border: solid red 1px; text-align: center'>$$$"+
+  "  <table border=1$$$      style='border-collapse: collapse; display: inline-table'>$$$"+
+  "    <tr><th></th><th>Netscape</th></tr>$$$"+
+  "    <tr><th>возраст</th><td>старый</td></tr>$$$"+
+  "    <tr><th>версия</th><td>9.0</td></tr>$$$"+
+  "  </table>$$$"+
+  "</div>";
+var Example1=
+  "<div style='border: solid red 1px'>$$$"+
+  "  <table border=1$$$      style='border-collapse: collapse' align=center>$$$"+
+  "    <tr><th></th><th>Netscape</th></tr>$$$"+
+  "    <tr><th>возраст</th><td>старый</td></tr>$$$"+
+  "    <tr><th>версия</th><td>9.0</td></tr>$$$"+
+  "  </table>$$$"+
+  "</div>";
+Str+=ComposeExamples([{code:Example2},{code:Example3},{code:Example1}],{leftcolperc:63,leftfontsize:13,autoquoteattrs:true});
+
+
+
+document.write(Str);

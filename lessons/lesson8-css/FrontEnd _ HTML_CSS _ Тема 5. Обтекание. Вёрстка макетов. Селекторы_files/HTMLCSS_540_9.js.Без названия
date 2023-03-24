@@ -1,0 +1,46 @@
+﻿var Str="";
+
+Str+="<div class='SExampleHeader SFont13'>";
+Str+="4. Применяем к обтекающему элементу его фоновое изображение.";
+
+var Example=
+"<div style='border: solid magenta 1px; background: url(\"images/brick_yellow.png\")'>$$$"+
+"<div style='border: solid blue 1px; width: 30%; float: left'>меню меню меню меню меню меню меню</div>\n$$$"+
+"<div style='border: solid red 1px; margin-left: 32%; background: url(\"images/brick_blue.png\")'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"<div style='clear:both'></div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="Фон контейнера перекрывается голубыми кирпичами справа, но остаётся виден слева, причём даже ниже самого div с меню, и визуально кажется, что слева - фон столбца.";
+Str+="<br>Но у этой реализации будут проблемы, если меню окажется длиннее контента:";
+
+var Example=
+"<div style='border: solid magenta 1px; background: url(\"images/brick_yellow.png\")'>$$$"+
+"<div style='border: solid blue 1px; width: 30%; float: left'>меню меню меню меню меню меню меню меню меню</div>\n$$$"+
+"<div style='border: solid red 1px; margin-left: 32%; background: url(\"images/brick_blue.png\")'>контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"<div style='clear:both'></div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="5. Если для какого-либо элемента отменено обтекание (clear), то он не будет обтекать обтекаемые элементы, даже если они принадлежат другим контейнерам. То есть, <b>если внутри обтекающего текста есть элемент со стилевым свойством clear, то этот элемент опустится ниже до такого места, где уже (с&nbsp;указанной стороны) не будет обтекаемых элементов, а следовательно, высота обтекающего текста дойдёт минимум до конца обтекаемого (обтекаемых) блоков.</b>";
+
+var Example=
+"<div style='border: solid magenta 1px; background: url(\"images/brick_yellow.png\")'>$$$"+
+"<div style='border: solid blue 1px; width: 30%; float: left'>меню меню меню меню меню меню меню меню меню</div>\n$$$"+
+"<div style='border: solid red 1px; margin-left: 32%; background: url(\"images/brick_blue.png\")'>$$$"+
+"контент контент контент контент контент контент контент контент контент контент контент контент контент$$$"+
+"  <div style='clear: both; border: solid blue 1px'></div>\n$$$"+
+"</div>\n$$$"+
+"<div style='clear:both'></div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="В данном случае пустой div с синей рамкой опустился вниз до конца обтекаемого им блока меню.";
+
+Str+="</div>";
+
+
+document.write(Str);

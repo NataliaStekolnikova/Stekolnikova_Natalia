@@ -1,0 +1,48 @@
+﻿var Str="";
+
+Str+="<div class='SExampleHeader SFont13'>";
+Str+="При блочной вёрстке не существует прямого способа добиться одинаковой высоты нескольких столбцов (т.е. элементов div). Каждый элемент div имеет высоту, определяемую его содержимым, и не зависящую от высоты других элементов div.";
+Str+="<br>Однако, часто можно сверстать макет так, чтобы визуально столбцы <b>казались</b> имеющими одинаковую высоту.";
+Str+="</div>";
+
+Str+="<div class='SExampleHeader'>";
+Str+="<h5>Подход №1. Подготовка специальных фоновых изображений для контейнера</h1>";
+Str+="</div>";
+
+Str+="<div class='SExampleHeader SFont13'>";
+Str+="Можно добиться визуально одинаковых столбцов, используя специально подготовленные фоновые изображения, применяемые к контейнеру, в котором располагаются все столбцы. Т.е. элементы div имеют различную высоту, но не имеют фона; контейнер же как раз имеет такой фон, который совпадает по размеру и поведению с шириной столбцов, поэтому <b>кажется</b>, что столбец имеет ту же высоту что и контейнер.";
+Str+="</div>";
+
+Str+="<div class='SExampleHeader SFont13'>";
+Str+="Предположим, что на сайте про черепашек нужно сверстать следующий фон для столбцов<br>(для простоты опущены блоки ШАПКА и ПОДВАЛ):";
+
+Str+="<table class='SNoBorders' style='margin-top: 10px'><tr>";
+Str+="<td style='width: 15%; vertical-align: top; background: url(\"images/brick_yellow.png\")'>меню меню меню меню меню меню</td>";
+Str+="<td style='background: url(\"images/brick_blue.png\")'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</td>";
+Str+="<td style='width: 200px; vertical-align: top; background: url(\"images/brick_green.png\")'>баннеры баннеры баннеры баннеры баннеры</td>";
+Str+="</tr></table>";
+
+Str+="<br>1. Верстаем столбцы без фона. Временно добавляем рамочки, чтобы видеть границы столбцов.";
+
+var Example=
+"<div style='border: solid blue 1px; width: 15%; float: left'>меню меню меню меню меню меню</div>\n$$$"+
+"<div style='border: solid green 1px; width: 200px; float: right'>баннеры баннеры баннеры баннеры баннеры</div>\n$$$"+
+"<div style='border: solid red 1px; margin-left: 17%; margin-right: 210px'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="2. Добавляем контейнер для всех столбцов (розовая рамка).";
+
+var Example=
+"<div style='border: solid magenta 1px'>\n$$$"+
+"  <div style='border: solid blue 1px; width: 15%; float: left'>меню меню меню меню меню меню</div>\n$$$"+
+"  <div style='border: solid green 1px; width: 200px; float: right'>баннеры баннеры баннеры баннеры баннеры</div>\n$$$"+
+"  <div style='border: solid red 1px; margin-left: 17%; margin-right: 210px'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+
+Str+="</div>";
+
+document.write(Str);

@@ -1,0 +1,35 @@
+﻿var Str="";
+
+Str+="<div class='SExampleHeader SFont13'>";
+
+Str+="Заданный для блоков МЕНЮ и КОНТЕНТ фон заполнил также и блок БАННЕРЫ, однако, мы можем поверх этого фона расположить уже ранее проработанный фон блока БАННЕРЫ. Так как для описания фона блока БАННЕРЫ нам нужно для контейнера задать стилевое свойство background,<br>а оно уже &laquo;занято&raquo; фоном для блоков МЕНЮ и КОНТЕНТ, мы должны описать ещё один контейнер (современные браузеры позволяют для одного HTML-элемента задавать сразу несколько фонов). Второй контейнер должен быть внутри первого контейнера (а не наоборот), т.к. нам нужно чтобы фоновое изображение второго контейнера перекрыло фоновое изображение первого контейнера:";
+
+var Example=
+"<div style='border: solid magenta 1px; background: url(\"images/wall_y15b85.png\") 15% top repeat-y'>\n$$$"+
+"  <div style='border: solid magenta 1px; background: url(\"images/wall_g200.png\") right top repeat-y'>\n$$$"+
+"    <div style='width: 15%; float: left'>меню меню меню меню меню меню</div>\n$$$"+
+"    <div style='width: 200px; float: right'>баннеры баннеры баннеры баннеры баннеры</div>\n$$$"+
+"    <div style='margin-left: 17%; margin-right: 210px'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"    <div style='clear: both'></div>\n$$$"+
+"  </div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="Всё готово! Рамки обоих контейнеров можно убрать. Содержимое блоков может иметь любую высоту.";
+
+var Example=
+"<div style='background: url(\"images/wall_y15b85.png\") 15% top repeat-y'>\n$$$"+
+"  <div style='background: url(\"images/wall_g200.png\") right top repeat-y'>\n$$$"+
+"    <div style='width: 15%; float: left'>меню меню меню меню меню меню</div>\n$$$"+
+"    <div style='width: 200px; float: right'>баннеры баннеры баннеры баннеры баннеры</div>\n$$$"+
+"    <div style='margin-left: 17%; margin-right: 210px'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"    <div style='clear: both'></div>\n$$$"+
+"  </div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="</div>";
+
+document.write(Str);

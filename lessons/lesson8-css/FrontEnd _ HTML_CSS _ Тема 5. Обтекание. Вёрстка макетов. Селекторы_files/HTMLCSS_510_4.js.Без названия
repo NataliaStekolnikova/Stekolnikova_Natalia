@@ -1,0 +1,29 @@
+﻿var Str="";
+
+
+Str+="<div class='SExampleHeader'>";
+Str+="Стилевое свойство <b>clear</b> отменяет для элемента режим обтекания плавающих элементов.";
+Str+="</div>";
+
+Str+="<div class='SExampleDescription'>";
+Str+="Это стилевое свойство запрещает данному элементу обтекать плавающие элементы, с одной или двух сторон.";
+Str+="<br>Может применяться практически к любому элементу.";
+Str+="</div>";
+
+Str+="<div class='SExampleHeader'>";
+Str+="Возможные значения:";
+Str+="<br><b>clear: left</b> &mdash; этот элемент не может обтекать плавающие элементы, расположенные слева.";
+Str+="<br><b>clear: right</b> &mdash; этот элемент не может обтекать плавающие элементы, расположенные справа.";
+Str+="<br><b>clear: both</b> &mdash; этот элемент не может обтекать плавающие элементы вообще.";
+Str+="<br><b>clear: none</b> &mdash; этот элемент может обтекать плавающие элементы с любой стороны.";
+Str+="</div>";
+
+
+var ExampleN='<img src="images/flower.jpg" style="float: left">$$$<p>Это &mdash; дельфиниум.</p>$$$<p style="clear: none">$$$Есть версия, что имя растения происходит от названия греческого города Дельфы.</p>';
+var ExampleR='<img src="images/flower.jpg" style="float: left">$$$<p>Это &mdash; дельфиниум.</p>$$$<p style="clear: right">$$$Есть версия, что имя растения происходит от названия греческого города Дельфы.</p>';
+var ExampleL='<img src="images/flower.jpg" style="float: left">$$$<p>Это &mdash; дельфиниум.</p>$$$<p style="clear: left">$$$Есть версия, что имя растения происходит от названия греческого города Дельфы.</p>';
+var ExampleB='<img src="images/flower.jpg" style="float: left">$$$<p>Это &mdash; дельфиниум.</p>$$$<p style="clear: both">$$$Есть версия, что имя растения происходит от названия греческого города Дельфы.</p>';
+Str+=ComposeExamples([{code:ExampleN},{code:ExampleL},{code:ExampleR},{code:ExampleB}],{leftcolperc:60});
+
+
+document.write(Str);

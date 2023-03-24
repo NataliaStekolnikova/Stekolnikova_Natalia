@@ -1,0 +1,44 @@
+﻿var Str="";
+
+Str+="<div class='SExampleHeader SFont13'>";
+
+Str+="<br>2. Опишем фон для средней колонки.";
+Str+="<br>Подготовим широкое (с расчётом на очень широкие экраны) фоновое изображение, 15% ширины которого составляют <b>прозрачные пиксели</b>, и 85% &mdash; голубые кирпичи (wall_t15b85.png):";
+
+Str+="<img src='images/wall_t15b85.png' width=100% style='margin: 15px 0 15px 0'>";
+
+Str+="(изображение wall_t15b85.png показано в уменьшенном виде, его ширина &mdash; 1882px)";
+
+Str+="<br><br>Если задать это фоновое изображение контейнеру вместе с <b>background-position: 15% top</b>, то блок КОНТЕНТ получит в качестве фона голубые кирпичи, а блок МЕНЮ &mdash; прозрачные пиксели, через которые будет видна уже расположенная там черепаха.";
+Str+="<div style='margin-bottom: -5px'>Поскольку один контейнер уже имеется (его фон &mdash; черепаха), нужно описать ещё один контейнер. Пусть необходимо чтобы при малой ширине окна браузера голубые кирпичи &laquo;накрывали&raquo; черепаху, тогда второй контейнер должен быть вложен в первый, а не наоборот:</div>";
+
+var Example=
+"<div style='border: solid magenta 1px; background: url(\"images/turtle.jpg\") left bottom no-repeat'>\n$$$"+
+"  <div style='border: solid magenta 1px; background: url(\"images/wall_t15b85.png\") 15% top repeat-y'>\n$$$"+
+"    <div style='border: solid blue 1px; width: 15%; float: left'>меню меню меню меню меню меню</div>\n$$$"+
+"    <div style='border: solid green 1px; width: 200px; float: right'>баннеры баннеры баннеры баннеры баннеры</div>\n$$$"+
+"    <div style='border: solid red 1px; margin-left: 17%; margin-right: 210px'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"    <div style='clear: both'></div>\n$$$"+
+"</div></div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="<div style='margin-bottom: -5px'>Добавим уже известным способом зелёные кирпичи (ещё один контейнер) и уберём рамки:</div>";
+
+var Example=
+"<div style='background: url(\"images/turtle.jpg\") left bottom no-repeat'>\n$$$"+
+"  <div style='background: url(\"images/wall_t15b85.png\") 15% top repeat-y'>\n$$$"+
+"    <div style='background: url(\"images/wall_g200.png\") right top repeat-y'>\n$$$"+
+"      <div style='width: 15%; float: left'>меню меню меню меню меню меню</div>\n$$$"+
+"      <div style='width: 200px; float: right'>баннеры баннеры баннеры баннеры баннеры</div>\n$$$"+
+"      <div style='margin-left: 17%; margin-right: 210px'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"      <div style='clear: both'></div>\n$$$"+
+"</div></div></div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="Описанные способы компоновки фона можно комбинировать в различных сочетаниях, добиваясь желаемого результата.";
+
+Str+="</div>";
+
+document.write(Str);

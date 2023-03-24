@@ -1,0 +1,37 @@
+﻿var Str="";
+
+Str+="<div class='SExampleHeader SFont13'>";
+
+Str+="3. Опишем фон для правой колонки. Колонка имеет фиксированную ширину &mdash; 200px, поэтому, подготовим нужное фоновое изображение ширины 200px и минимальной высоты (wall_g200.png):";
+
+Str+="<br><br><img src='images/wall_g200.png'>";
+
+Str+="<br><br>Задаём это изображение в качестве фона <b>контейнера</b> справа:";
+
+var Example=
+"<div style=\"border: solid magenta 1px; background: url(\'images/wall_g200.png\') right top repeat-y\">\n$$$"+
+"  <div style='border: solid blue 1px; width: 15%; float: left'>меню меню меню меню меню меню</div>\n$$$"+
+"  <div style='border: solid green 1px; width: 200px; float: right'>баннеры баннеры баннеры баннеры баннеры</div>\n$$$"+
+"  <div style='border: solid red 1px; margin-left: 17%; margin-right: 210px'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"  <div style='clear: both'></div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="Рамку вокруг блока БАННЕРЫ можно убрать, чтобы лучше наблюдать эффект:";
+
+var Example=
+"<div style=\"border: solid magenta 1px; background: url('images/wall_g200.png') right top repeat-y\">\n$$$"+
+"  <div style='border: solid blue 1px; width: 15%; float: left'>меню меню меню меню меню меню</div>\n$$$"+
+"  <div style='width: 200px; float: right'>баннеры баннеры баннеры баннеры баннеры</div>\n$$$"+
+"  <div style='border: solid red 1px; margin-left: 17%; margin-right: 210px'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"  <div style='clear: both'></div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="Поскольку мы задали фоновое изображение <b>контейнера</b>, оно повторяется на всю высоту контейнера; поскольку оно имеет ту же ширину и то же положение что и правая колонка &mdash; создаётся впечатление, что колонка БАННЕРЫ имеет ту же высоту что и колонка КОНТЕНТ, а зелёные кирпичи&nbsp;&mdash; это фон именно колонки БАННЕРЫ.";
+
+Str+="</div>";
+
+document.write(Str);

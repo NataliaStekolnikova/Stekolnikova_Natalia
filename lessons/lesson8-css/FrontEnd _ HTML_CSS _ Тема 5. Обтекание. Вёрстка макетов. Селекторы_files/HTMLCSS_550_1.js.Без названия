@@ -1,0 +1,46 @@
+﻿var Str="";
+
+
+Str+="<div class='SExampleHeader'>";
+Str+="Обычно, блочный элемент не может быть выровнен внутри его контейнера стилевым свойством контейнера text-align, даже если блочному элементу явно задана ширина, меньшая ширины контейнера.<br>";
+Str+="</div>";
+
+var Example=
+  "<div style='border: solid red 1px; text-align: center'>$$$"+
+  "  <div style='width: 140px; border: solid blue 1px'>$$$"+
+  "    Красиво ты вошла в мою грешную жизнь,$$$    красиво ты ушла из неё.$$$"+
+  "  </div>$$$"+
+  "</div>";
+Str+=ComposeExamples([{code:Example}],{leftcolperc:60,leftfontsize:13,autoquoteattrs:true});
+
+Str+="<div class='SExampleHeader'>";
+Str+="Блочный элемент, более узкий чем его контейнер, можно выровнять внутри его контейнера по&nbsp;горизонтали несколькими способами:";
+Str+="<ul>";
+Str+="<li>установкой элементу стилевых свойств <b>margin-left</b> и <b>margin-right</b> в значение <b>auto</b> (центрирование);";
+Str+="<li>установкой элементу стилевого свойства <b>display</b> в значение <b>inline-block</b>, при этом на него начинает действовать стилевое свойство контейнера <b>text-align</b> (формально, элемент уже при этом не является блочным).";
+Str+="</ul>";
+Str+="</div>";
+
+var Example2=
+  "<div style='border: solid red 1px'>$$$"+
+  "  <div style='width: 140px; border: solid blue 1px;$$$      margin: 0 auto 0 auto'>$$$"+
+  "    Красиво ты вошла в мою грешную жизнь,$$$    красиво ты ушла из неё.$$$"+
+  "  </div>$$$"+
+  "</div>";
+var Example3=
+  "<div style='border: solid red 1px; text-align: center'>$$$"+
+  "  <div style='width: 140px; border: solid blue 1px;$$$      display: inline-block'>$$$"+
+  "    Красиво ты вошла в мою грешную жизнь,$$$    красиво ты ушла из неё.$$$"+
+  "  </div>$$$"+
+  "</div>";
+var Example4=
+  "<div style='border: solid red 1px; text-align: right'>$$$"+
+  "  <div style='width: 140px; border: solid blue 1px;$$$      display: inline-block; text-align: left'>$$$"+
+  "    Красиво ты вошла в мою грешную жизнь,$$$    красиво ты ушла из неё.$$$"+
+  "  </div>$$$"+
+  "</div>";
+Str+=ComposeExamples([{code:Example2},{code:Example3},{code:Example4}],{leftcolperc:60,leftfontsize:13,autoquoteattrs:true});
+
+
+
+document.write(Str);

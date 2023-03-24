@@ -1,0 +1,25 @@
+﻿var Str="";
+
+Str+="<div class='SExampleDescription'>";
+Str+="Размеры контейнера не включают в себя площадь, закрытую дочерними плавающими элементами.";
+Str+="</div>";
+
+var ExampleN='<div style="border: solid red 1px; padding: 3px">$$$  <img src="images/ball3.png"$$$    style="float: left; margin: 4px">$$$  <div style="border: solid blue 1px">$$$    Мяч футбольный.<br>$$$    Покупай, не проиграешь!$$$  </div>$$$</div>';
+Str+=ComposeExamples([{code:ExampleN}],{leftcolperc:55});
+
+Str+="<div class='SExampleDescription'>";
+Str+="Если необходимо включить в размеры контейнера площадь, закрытую дочерними плавающими элементами, можно пойти 3 путями:";
+Str+="<ul>";
+Str+="<li>в контейнер включить пустой div с отменой обтекания (так называемый clearfix)";
+Str+="<li>установить контейнеру стилевое свойство overflow: hidden";
+Str+="<li>сам контейнер сделать плавающим.";
+Str+="</ul>";
+Str+="</div>";
+
+var ExampleN1='<div style="border: solid red 1px; padding: 3px">$$$  <img src="images/ball3.png"$$$    style="float: left; margin: 4px">$$$  <div style="border: solid blue 1px">$$$    Мяч футбольный.<br>$$$    Покупай, не проиграешь!$$$  </div>$$$  <div style="clear: both; border: solid green 1px">$$$  </div>$$$</div>';
+var ExampleN2='<div style="border: solid red 1px; padding: 3px;$$$  overflow: hidden">$$$  <img src="images/ball3.png"$$$    style="float: left; margin: 4px">$$$  <div style="border: solid blue 1px">$$$    Мяч футбольный.<br>$$$    Покупай, не проиграешь!$$$  </div>$$$</div>';
+var ExampleN3='<div style="border: solid red 1px; padding: 3px;$$$  float: left; width: 246px">$$$  <img src="images/ball3.png"$$$    style="float: left; margin: 4px">$$$  <div style="border: solid blue 1px">$$$    Мяч футбольный.<br>$$$    Покупай, не проиграешь!$$$  </div>$$$</div>';
+Str+=ComposeExamples([{code:ExampleN1},{code:ExampleN2},{code:ExampleN3}],{leftcolperc:57});
+
+
+document.write(Str);

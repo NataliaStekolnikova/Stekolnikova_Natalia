@@ -1,0 +1,26 @@
+﻿var Str="";
+
+
+Str+="<div class='SExampleDescription'>";
+Str+="Если после плавающего элемента в HTML-коде следует ещё один плавающий элемент, второй плавающий элемент обтекает первый плавающий элемент.";
+Str+="</div>";
+
+var Example1='<div style="border: solid red 1px; text-align: justify">$$$<img src="images/flower.jpg" style="float: left">$$$<img src="images/smile.gif" style="float: left">$$$Своё научное латин&shy;ское название растение получило, возможно, из-за сходства нераспустившегося цветка с формой головы и тела дельфина. По другой версии, имя растения происходит от названия греческого города Дельфы.$$$</div>';
+var Example2='<div style="border: solid red 1px; text-align: justify">$$$<img src="images/flower.jpg" style="float: right">$$$<img src="images/smile.gif" style="float: right">$$$Своё научное латин&shy;ское название растение получило, возможно, из-за сходства нераспустившегося цветка с формой головы и тела дельфина. По другой версии, имя растения происходит от названия греческого города Дельфы.$$$</div>';
+Str+=ComposeExamples([{code:Example1},{code:Example2}],{leftcolperc:52,leftfontsize:13});
+
+var ExampleT=
+  '<div style="border: solid red 1px; text-align: justify">$$$'+
+  '<img src="images/flower.jpg" style="float: left">$$$'+
+  '<img src="images/football.jpg" style="float: right">$$$'+
+  '<img src="images/smile.gif" style="float: left">$$$'+
+  'Своё научное латинское название растение получило, возможно, из-за сходства нераспустившегося цветка с формой головы и тела дельфина. По другой версии, имя растения происходит от названия греческого города Дельфы. '+
+  'Своё научное латинское название растение получило, возможно, из-за сходства нераспустившегося цветка с формой головы и тела дельфина. По другой версии, имя растения происходит от названия греческого города Дельфы. '+
+  'Своё научное латинское название растение получило, возможно, из-за сходства нераспустившегося цветка с формой головы и тела дельфина. По другой версии, имя растения происходит от названия греческого города Дельфы.$$$'+
+  '</div>';
+Str+=ComposeExamples([{code:ExampleT}],{leftfontsize:13,leftcolperc:100,vertical:true});
+
+
+
+
+document.write(Str);

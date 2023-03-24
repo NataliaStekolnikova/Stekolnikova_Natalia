@@ -1,0 +1,35 @@
+﻿var Str="";
+
+Str+="<div class='SExampleDescription'>";
+Str+="Размеры обтекающих элементов включают в себя площадь, закрытую обтекаемыми элементами.";
+Str+="</div>";
+
+var ExampleN='<img src="images/sinatra.jpg"$$$  style="float: left; margin: 4px">$$$<div style="border: solid blue 1px">$$$  Фрэнк Синатра<br>1915-1998  $$$</div>';
+Str+=ComposeExamples([{code:ExampleN}],{leftcolperc:55});
+
+Str+="<div class='SExampleDescription'>";
+Str+="Соответственно, и фон, и рамки обтекающих элементов распространяются на&nbsp;площадь, закрытую обтекаемыми элементами.";
+Str+="</div>";
+
+var Example1=
+  '<div style="border: solid red 1px">$$$'+
+  '<img src="images/ball3.png"$$$  style="float: left; margin: 10px 10px 0 20px">$$$'+
+  '<h3 style="background-color: yellow;$$$    border-bottom: solid black 1px">$$$  Дельфиниум</h3>$$$'+
+  'Своё научное латинское название растение получило, возможно, из-за сходства цветка с формой головы и тела дельфина.$$$'+
+  '</div>';
+Str+=ComposeExamples([{code:Example1}],{leftcolperc:52,leftfontsize:13});
+
+Str+="<div class='SExampleDescription'>";
+Str+="Если установить для обтекающего элемента стилевое свойство <b>overflow: hidden</b>, можно скрыть те части фона и рамок обтекающих элементов, которые закрыты обтекаемыми элементами.";
+Str+="</div>";
+
+var Example2=
+  '<div style="border: solid red 1px">$$$'+
+  '<img src="images/ball3.png"$$$  style="float: left; margin: 10px 10px 0 20px">$$$'+
+  '<h3 style="background-color: yellow;$$$    border-bottom: solid black 1px; overflow: hidden">$$$  Дельфиниум</h3>$$$'+
+  'Своё научное латинское название растение получило, возможно, из-за сходства цветка с формой головы и тела дельфина.$$$'+
+  '</div>';
+
+Str+=ComposeExamples([{code:Example2}],{leftcolperc:52,leftfontsize:13});
+
+document.write(Str);

@@ -1,0 +1,45 @@
+﻿var Str="";
+
+Str+="<div class='SExampleHeader SFont13'>";
+
+Str+="Контейнер должен охватывать все колонки. Однако, элемент div охватывает всё своё содержимое,<br>но игнорирует высоту float-элементов. Если блок МЕНЮ или блок БАННЕРЫ окажется длиннее блока КОНТЕНТ, контейнер не сработает так как нам нужно:";
+
+var Example=
+"<div style='border: solid magenta 1px'>\n$$$"+
+"  <div style='border: solid blue 1px; width: 15%; float: left'>меню меню меню меню меню меню</div>\n$$$"+
+"  <div style='border: solid green 1px; width: 200px; float: right'>баннеры баннеры баннеры баннеры баннеры баннеры баннеры баннеры баннеры</div>\n$$$"+
+"  <div style='border: solid red 1px; margin-left: 17%; margin-right: 210px'>контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="Чтобы решить эту проблему, в контейнер можно включить ещё один (можно пустой) элемент div, имеющий стилевое свойство clear: both, т.е. гарантированно не обтекающий ни один float-элемент;<br>он расположится ниже любых float-элементов, и он будет корректно охвачен контейнером:";
+
+var Example=
+"<div style='border: solid magenta 1px'>\n$$$"+
+"  <div style='border: solid blue 1px; width: 15%; float: left'>меню меню меню меню меню меню</div>\n$$$"+
+"  <div style='border: solid green 1px; width: 200px; float: right'>баннеры баннеры баннеры баннеры баннеры баннеры баннеры баннеры баннеры</div>\n$$$"+
+"  <div style='border: solid red 1px; margin-left: 17%; margin-right: 210px'>контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"  <div style='border: solid black 1px; clear: both'>(пустой)</div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="Убираем содержимое и рамку этого пустого div &mdash; раз он не имеет содержимого, он будет иметь нулевую высоту и не будет виден:";
+
+var Example=
+"<div style='border: solid magenta 1px'>\n$$$"+
+"  <div style='border: solid blue 1px; width: 15%; float: left'>меню меню меню меню меню меню</div>\n$$$"+
+"  <div style='border: solid green 1px; width: 200px; float: right'>баннеры баннеры баннеры баннеры баннеры баннеры баннеры баннеры баннеры</div>\n$$$"+
+"  <div style='border: solid red 1px; margin-left: 17%; margin-right: 210px'>контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"  <div style='clear: both'></div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+//Str+="Теперь контейнер всегда охватывает все три колонки, какую бы высоту они не имели.";
+Str+="Теперь контейнер всегда охватывает все три колонки, какую бы высоту они не имели.";
+
+Str+="</div>";
+
+document.write(Str);

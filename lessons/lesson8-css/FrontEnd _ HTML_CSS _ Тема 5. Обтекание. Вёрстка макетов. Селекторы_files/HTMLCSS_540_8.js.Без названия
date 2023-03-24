@@ -1,0 +1,52 @@
+﻿var Str="";
+
+Str+="<div class='SExampleHeader'>";
+Str+="<h5>Подход №2. Перекрытие фона контейнера фоном столбца</h1>";
+Str+="</div>";
+
+Str+="<div class='SExampleHeader SFont13'>";
+Str+="Можно добиться визуально одинаковых столбцов, применяя фоновое изображение одного из столбцов не к самому столбцу, а к контейнеру, содержащему столбцы; тогда фоновое изображение другого столбца визуально перекрывает часть первого. При этом важно обеспечить, чтобы второй столбец по высоте был не меньше первого.";
+Str+="</div>";
+
+Str+="<div class='SExampleHeader SFont13'>";
+Str+="Предположим, что на сайте про черепашек нужно сверстать следующий фон для столбцов<br>(для простоты опущены блоки ШАПКА и ПОДВАЛ, и пока только два столбца):";
+
+Str+="<table class='SNoBorders' style='margin-top: 10px'><tr>";
+Str+="<td style='width: 30%; vertical-align: top; background: url(\"images/brick_yellow.png\")'>меню меню меню меню меню меню</td>";
+Str+="<td style='background: url(\"images/brick_blue.png\")'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</td>";
+Str+="</tr></table>";
+
+Str+="<br>1. Верстаем столбцы без фона. Временно добавляем рамочки, чтобы видеть границы столбцов.";
+
+var Example=
+"<div style='border: solid blue 1px; width: 30%; float: left'>меню меню меню меню меню меню меню</div>\n$$$"+
+"<div style='border: solid red 1px; margin-left: 32%'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="2. Добавляем контейнер. Помним, что для того чтобы контейнер охватывал и float-элементы тоже, следует добавить в контейнер ещё один div с clear:both.";
+
+var Example=
+"<div style='border: solid magenta 1px'>$$$"+
+"<div style='border: solid blue 1px; width: 30%; float: left'>меню меню меню меню меню меню меню</div>\n$$$"+
+"<div style='border: solid red 1px; margin-left: 32%'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"<div style='clear:both'></div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="3. Применяем к контейнеру то фоновое изображение, которое должно быть у обтекаемого (плавающего) элемента, т.е. того у которого установлено стилевое свойство float.";
+
+var Example=
+"<div style='border: solid magenta 1px; background: url(\"images/brick_yellow.png\")'>$$$"+
+"<div style='border: solid blue 1px; width: 30%; float: left'>меню меню меню меню меню меню меню</div>\n$$$"+
+"<div style='border: solid red 1px; margin-left: 32%'>контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент контент</div>\n$$$"+
+"<div style='clear:both'></div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="</div>";
+
+
+document.write(Str);

@@ -1,0 +1,48 @@
+﻿var Str="";
+
+Str+="<div class='SExampleHeader SFont13'>";
+
+Str+="6. Т.к. теперь высота контента не будет меньше высоты меню, то div с clear:both, распирающий контейнер, уже становится ненужным &mdash; float-содержимое никак не может &laquo;вылезти&raquo; за него.";
+
+var Example=
+"<div style='border: solid magenta 1px; background: url(\"images/brick_yellow.png\")'>$$$"+
+"<div style='border: solid blue 1px; width: 30%; float: left'>меню меню меню меню меню меню меню меню меню</div>\n$$$"+
+"<div style='border: solid red 1px; margin-left: 32%; background: url(\"images/brick_blue.png\")'>$$$"+
+"контент контент контент контент контент контент контент контент контент контент контент контент контент$$$"+
+"  <div style='clear: both; border: solid blue 1px'></div>\n$$$"+
+"</div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="7. Убираем отладочные рамки.";
+
+var Example=
+"<div style='background: url(\"images/brick_yellow.png\")'>$$$"+
+"<div style='width: 30%; float: left'>меню меню меню меню меню меню меню меню меню</div>\n$$$"+
+"<div style='margin-left: 32%; background: url(\"images/brick_blue.png\")'>$$$"+
+"контент контент контент контент контент контент контент контент контент контент контент контент контент$$$"+
+"  <div style='clear: both'</div>\n$$$"+
+"</div>\n$$$"+
+"</div>\n$$$"+
+"";
+Str+=ComposeExamples([{code:Example}],{leftfontsize:11,leftcolperc:100,vertical:true,autoquoteattrs:true});
+
+Str+="Данная реализация сработает при любом соотношении высот меню и контента, при любой стороне расположения обтекаемого контента (float:left, float:right), и при любом способе установки размера блока меню&nbsp;&mdash; px,&nbsp;em, %, mm...";
+
+Str+="<br><br><b>Данный подход применим только для случая, если колонок ровно две.</b><Br>Если колонок больше, в общем случае такой подход не поможет.";
+
+Str+="<br><br><hr>";
+
+Str+="<br>Возможности обоих подходов могут быть скомбинированы при необходимости.";
+
+Str+="<br><br>Ограничения обоих подходов:";
+Str+="<ul>";
+Str+="<li>везде, где используется наложение фона одного элемента на другой, становится невозможным использовать полупрозрачные фоны или фоны с прозрачными областями (т.к.&nbsp;через прозрачные и полупрозрачные области фона первого плана будет просматриваться фон второго плана);";
+Str+="<li>везде, где используется наложение фона одного элемента на другой, становятся неприменимы некоторые способы выравнивания фона второго плана, например, для блока меню background-repeat: repeat-y; background-position: right расположит фон не у правого края колонки, а у правого края контейнера.";
+Str+="</ul>";
+
+Str+="</div>";
+
+
+document.write(Str);
