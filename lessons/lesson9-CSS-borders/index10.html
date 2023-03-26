@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            float: left;
+            font-family:'Times New Roman', Times, serif;
+            font-size: 20px;
+            text-align: start;
+            width: 960px; 
+        }
+
+        div.MenuLevel1 {
+            width: 160px;
+            height: 34px;
+            display:flex;
+            flex-direction: row;
+            border: solid black 1px;
+            border-radius: 5px;
+            background-color: #d3d3d3; 
+            color: #8d857f;
+            font-family:'Times New Roman', Times, serif;
+            font-size: 20px; 
+            text-align: start;       
+        } 
+        
+        div.MenuLevel2 { 
+            width: 160px;
+            height: 34px;
+            display: none;
+            border: solid black 1px;
+            border-radius: 5px;
+            background-color:  #d3d3d3;
+            color: #8d857f;
+            font-family:'Times New Roman', Times, serif;
+            font-size: 20px;
+            text-align: start;     
+        }
+    
+        div.MenuItem { 
+            background-color: #d3d3d3; 
+            border: solid  black 1px; 
+            cursor: pointer; 
+            border-radius: 5px;
+            width: 160px;
+            height: 34px;
+            font-family:'Times New Roman', Times, serif;
+            font-size: 20px;
+            text-align: start; 
+        }
+
+        .MenuLevel1:hover .MenuLevel2 {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            top: 42px;
+            font-family:'Times New Roman', Times, serif;
+                font-size: 20px;
+                text-align: start; 
+        }
+
+        .MenuLevel1:hover {
+            background-color: #818181;
+            color: #c4c8cc;
+            font-family:'Times New Roman', Times, serif;
+                font-size: 20px;
+                text-align: start; 
+        }
+
+        .MenuItem:hover {
+            background-color: #818181;
+            color: #c4c8cc;
+            font-family:'Times New Roman', Times, serif;
+                font-size: 20px;
+                text-align: start; 
+        }
+
+        /* стили для адаптивности меню */
+        @media screen and (max-width: 960px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                font-family:'Times New Roman', Times, serif;
+                font-size: 20px;
+                text-align: start; 
+            }
+
+            .MenuLevel1 {
+                width: 160px;
+                height: 34px;
+                font-family:'Times New Roman', Times, serif;
+                font-size: 20px;
+                text-align: start; 
+            }
+            .MenuLevel2 {
+                justify-content: space-between;
+                position: relative;
+                left: 168px;
+                width: 240px;
+                height: 34px;
+                font-family:'Times New Roman', Times, serif;
+                font-size: 20px;
+                text-align: start; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='MenuLevel1'>
+            Понедельник
+            <div class='MenuLevel2'>
+                <div class="MenuItem">Завтрак</div>
+                <div class="MenuItem">Обед</div>
+                <div class="MenuItem">Ужин</div>
+            </div>
+        </div>
+        <div class='MenuLevel1'>
+            Вторник
+            <div class='MenuLevel2'>
+                <div class="MenuItem">Завтрак</div>
+                <div class="MenuItem">Обед</div>
+                <div class="MenuItem">Ужин</div>
+            </div>
+        </div>
+        <div class='MenuLevel1'>
+            Среда
+            <div class='MenuLevel2'>
+                <div class="MenuItem">Завтрак</div>
+                <div class="MenuItem">Обед</div>
+                <div class="MenuItem">Ужин</div>
+            </div>
+        </div>
+        <div class='MenuLevel1'>
+            Четверг
+            <div class='MenuLevel2'>
+                <div class="MenuItem">Завтрак</div>
+                <div class="MenuItem">Обед</div>
+                <div class="MenuItem">Ужин</div>
+            </div>
+        </div>
+        <div class='MenuLevel1'>
+            Пятница
+            <div class='MenuLevel2'>
+                <div class="MenuItem">Завтрак</div>
+                <div class="MenuItem">Обед</div>
+                <div class="MenuItem">Ужин</div>
+            </div>
+        </div>
+        <div class='MenuLevel1'>
+            Суббота
+            <div class='MenuLevel2'>
+                <div class="MenuItem">Завтрак</div>
+                <div class="MenuItem">Обед</div>
+                <div class="MenuItem">Ужин</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
