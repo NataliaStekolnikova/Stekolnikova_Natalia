@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      h1 {
+        margin-left: 10px;
+      }
+
+      h2 {
+        margin-left: 10px;
+      }
+
+      .span-ml {
+        margin-left: 5px;        
+      }
+
+      .span-p {
+        padding-left: 20px;
+        text-align: left;
+      }
+
+      .span-l {
+        padding-left: 0px;
+        text-align: left;
+      }
+
+      .p-x {
+        padding-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 7px;
+      }
+
+      .p-xxl {
+        padding-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 25px;
+      }
+
+      .rounded-border {
+        border: 1px solid #d3d3d3;
+        border-radius: 0px 15px 0px 15px;
+        width: 680px;
+        margin-top: 0;
+        padding-top: 0px;
+        margin-left: 10px;
+      }
+
+      .rounded-border p:first-child {
+        text-indent: 20px;
+      }
+
+      li {
+        list-style-type: none;
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .file-link {
+        display: inline-block;
+        position: relative;
+      }
+
+      .file-icon {
+        float: right;
+        margin-left: 0px;
+      }
+      .file-icon-h {
+        float: right;
+        margin-left: 0px;
+        display: none;
+      }
+      .file-link:hover .file-icon-h {
+        display: inline-block;
+      }
+
+    </style>
+</head>
+<body>
+    <h1>Форматы файлов.</h1>
+      <div class="rounded-border">
+        <span class="span-p">.DOC или .doc (от англ.<a href="document.doc"><img src="load.png" alt="Документ">document</a>) — расширение имени файла, используемое для файлов, представляющих текст, с разметкой или без. Расширение .DOC часто использовалось для обозначения простых текстовых файлов без формирования, однако позже стало использоваться для двоичных форматов с разметкой.</span>
+        <p class="p-x"><a href="document_word.doc" class="file-link"><img src="word.jpg" alt="Документ MS Word" class="file-icon">Документ MS Word</a></p>
+      </div>
+
+      <div class="rounded-border">
+        <span class="span-p">Portable Document Format (<a href="pdf.pdf"><img src="load.png" alt="PDF">PDF</a>) — межплатформенный открытый формат электронных документов, разработанный фирмой Adobe Systems с использованием ряда возможностей языка PostScript.</span>
+        <p class="p-xxl"><a href="document_pdf.pdf" class="file-link"><img src="pdf.png" alt="Документ PDF" class="file-icon">Документ PDF</a></p>
+      </div>
+
+      <div class="rounded-border">
+        <span class="span-p">ZIP — популярный формат сжатия данных и архивации файлов. Файл в этом формате обычно имеет расширение <a href="archive.zip"><img src="load.png" alt="Архив">.zip</a> и хранит в сжатом или несжатом виде один или несколько файлов, которые можно из него извлечь путём распаковки с помощью специальной программы.</span>
+        <p class="p-x"><a href="archive.zip" class="file-link"><img src="zip.gif" alt="Архив" class="file-icon">Архив</a></p>
+      </div>
+      
+  <h2>Это список файлов</h2>
+  <ul>
+      <li>
+          <a href="document_word.doc">
+            <img src="file.jpg" alt="Документ MS Word"><a href="word.jpg" class="file-link">
+              <img src="word.jpg" alt="Документ MS Word" class="file-icon-h"><span class="span-ml">Документ MS Word</span></a>
+      </li>
+      <li>
+          <a href="document_pdf.pdf">
+            <img src="file.jpg" alt="Документ PDF"><a href="pdf.png" class="file-link">
+              <img src="pdf.png" alt="PDF" class="file-icon-h"><span class="span-ml">Документ PDF</span></a>
+      </li>
+      <li>
+          <a href="archive.zip">
+            <img src="file.jpg" alt="Архив"><a href="archive.zip" class="file-link">
+              <img src="zip.gif" alt="Архив" class="file-icon-h"><span class="span-ml">Архив</span></a>
+          </a>
+      </li>
+  </ul>
+</body>
+</html>
