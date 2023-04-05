@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Программа на Python</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/foundation.css" />
+  </head>
+  <style>
+    a {
+      color: #126b87;
+      text-decoration: underline;
+      text-decoration-color: #1eaedb;
+    }
+    h2[id=chapter-1]{
+      color: #126b87;
+      text-decoration: #126b87;
+    }
+    h2[id=chapter-2]{
+      color: #126b87;
+      text-decoration-color: #126b87;
+    }
+    h2[id=chapter-3]{
+      font-weight: bold;
+      color: #126b87;
+      text-decoration-color: #126b87;
+    }
+    /* desktop-specific styles */
+    @media only screen and (min-width: 40em) {
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+          "header header"
+          "menu main";
+      }
+      .header {
+        grid-area: header;
+      }
+      .menu {
+        grid-area: menu;
+      }
+      .main {
+        grid-area: main;
+      }
+      .grid-х {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 1rem;
+      }
+      .cell {
+        padding: 1rem;
+      }
+    }
+  </style>
+  <body>
+    <div class="grid-container">
+      <div class="header">
+        <div class="cell">
+          <h1>HOW-TO: Программа на Python, Часть 1</h1>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="cell">
+          <h2 id="chapter-1">Содержание</h2>
+          <ul>
+            <li><a href="#chapter-2">Наша первая программа</a></li>
+            <li><a href="#chapter-3">Пример цикла For</a></li>   
+          </ul>
+        </div>
+      </div>
+      <div class="main">
+        <div class="cell">
+          <h2>HOW-TO: Программа на Python, Часть 1</h2>
+          <p>
+            Из множества существующих языков программирования Python — один из самых лёгких
+            в изучении. Он создан в конце 80-х годов XX века, но c тех пор он сильно изменился.
+            Хотя Python входит в состав большинства дистрибутивов Linux, на него часто не
+            обращают внимания при выборе языка для изучения. В этой статье мы рассмотрим
+            создание консольных приложений, а в следующей — программирование графических
+            интерфейсов (<ins>GUI</ins>). Д
+
