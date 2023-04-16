@@ -37,6 +37,7 @@
                 padding: 0px;
                 margin: 0px;
             }
+
             .f1sf1 {
                 width: "10";
             }
@@ -44,17 +45,22 @@
                 width: 100px;
             }
             input[type=text].f3t1 {
+                width: 168px;
                 margin-bottom: 4px;
+            
             }
 
             input[type='radio'] {
+                /* задает позиционирование элемента в соответствии с текущим расположением на странице */
                 position: relative;
                 width: 5px;
                 height: 5px;
+                /* отключает стандартный вид кнопки, устанавливая ее в "none", и позволяет задать пользовательский вид кнопки при помощи других CSS-свойств. */
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 appearance: none;
-                outline: none;
+                /*удаляет контур вокруг элемента при его активации, чтобы не отвлекать внимание пользователя*/
+                outline: none; 
             }
             input[type="radio"]::before {
                 content: '';
@@ -75,7 +81,7 @@
                 background-color: rgb(110, 110, 110);
                 transform: translate(-50%, -50%);
                 visibility: visible;
-            }
+            } 
         </style>
     </head>   
     <body>
@@ -90,7 +96,7 @@
         <table>
             <tr>
                 <td>
-                    <form name="form1" class="form1" method="post" action="http://fe.it-academy.by/TestForm.php">
+                    <form name="form1" class="form1" method="get" action="http://fe.it-academy.by/TestForm.php">
                         <p><b>Простая форма поиска с вариантами:</b></p>
                         <fieldset>
                             <legend>Строка поиска</legend> 
@@ -128,7 +134,7 @@
                         <p><b>Простая форма авторизации:</b></p>
                         <fieldset>
                             <legend>Авторизируйтесь</legend>
-                            <input type="text" id="f3t1" name="login" style="margin-bottom: 4px;" required><label for="f3t1"> * Логин</label>
+                            <input type="text" id="f3t1" name="login" style="width: 163px; margin-bottom: 4px;" required><label for="f3t1"> * Логин</label>
                             <input type="password" id="f3t2" name="password" required><label for="f3t2"> * Пароль</label>
                             <br />
                             <input type="checkbox" id="f3c1" name="remain-in-the-system"><label for="f3c1"> Оставаться в системе</label>
@@ -140,7 +146,7 @@
                     </form>
                 </td>
                 <td>
-                    <form name="form4" class="form2" method="get" action="http://fe.it-academy.by/TestForm.php">
+                    <form name="form4" class="form2" method="post" action="http://fe.it-academy.by/TestForm.php">
                         <p><b>Опрос(голосование):</b></p>
                         <fieldset>
                             <legend>Как вам?</legend>
@@ -168,7 +174,7 @@
                         <p><b>Отзыв:</b></p>
                         <fieldset>
                         <legend>Оставьте Ваш отзыв</legend>
-                        <input type="text" name="name" id="f5t1" required style="margin-bottom: 4px;""><label for="f5t1"> * Имя</label>
+                        <input type="text" name="name" id="f5t1" required style="width: 163px; margin-bottom: 4px;"><label for="f5t1"> * Имя</label>
                         <br />
                         <input type="email" name="email" id="f5t2" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><label for="f5t2"> * e-mail</label>
                         <br />
@@ -248,12 +254,12 @@
                         <p><b>Валидация данных HTML5:</b></p>
                         <fieldset>
                             <legend>Строка поиска</legend> 
-                            <input type="search" name="f8searchForm" value="Только русские буквы" pattern="[а-я А-ЯёЁ]+" required>
+                            <input type="search" name="f8searchForm" placeholder="Только русские буквы" pattern="[а-я А-ЯёЁ]+">
                             <br />
                             <label><i>Телефонный номер в формате</i></label>
                             <br />
                             <label><i>+ХХХ-ХХ-ХХХХХХХ, где Х - любое число</i></label>
-                            <input type="tel" name="f8tel" required value="+375-29-1234567" pattern="\+\d{3}-\d{2}-\d{7}">
+                            <input type="tel" name="f8tel" placeholder="+375-29-1234567" pattern="\+\d{3}-\d{2}-\d{7}">
                             <br>
                             <input type="submit" value="Проверить">
                         </fieldset>
